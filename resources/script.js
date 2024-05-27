@@ -8,7 +8,8 @@ for (let i = 0; i < arr.length; i++) {
       console.log(user[j].category)
       let newImage = document.createElement('img');
       newImage.src = user[j].icon;
-      newImage.className = 'image'
+      newImage.className = 'image';
+      newImage.alt = 'Icon for specific category leading to Frontend Mentor page';
       document.getElementById(user[j].category).appendChild(newImage);
 
       let newCategory = document.createElement('h3');
