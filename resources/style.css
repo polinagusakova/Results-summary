@@ -1,0 +1,236 @@
+:root {
+    --main-white: hsl(0, 0%, 100%);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 500;
+    background-color: var(--main-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/*Display center container*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Container for result*/
+.result {
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    border-radius: 20px;
+    z-index: 1;
+    max-height: 24rem;
+    padding: 2rem;
+    right: 50%;
+    position: absolute;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;    
+    text-align: center;
+}
+
+/*Container for summary*/
+.summary {
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 5px 5px 20px hsl(221, 100%, 96%);
+    position: absolute;
+    padding: 1rem 2rem 2rem 2rem;
+    height: 24rem;
+    max-height: 24rem;
+    left: 49%;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+}
+
+/*Container for circle with info*/
+.circle {
+    border-radius: 70px;
+    background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    width: 8rem;
+    height: 8rem;
+    display: flex; /* or inline-flex */
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*h1 in Result containter*/
+h1 {
+    font-size: 1rem;
+    color: hsl(241, 100%, 89%);
+    letter-spacing: 0.04rem;
+}
+
+/*h2 in circle*/
+.total_scored {
+    font-size: 3rem;
+    color: var(--main-white);
+}
+
+/*p in circle*/
+.of {
+    color: hsla(241, 100%, 89%, 0.5);
+    font-size: 0.8rem;
+}
+
+/*h2 after circle*/
+.great_header {
+    font-size: 1.5rem;
+    color: var(--main-white);
+}
+
+/*info after result*/
+.percentage_score {
+    color: hsl(241, 100%, 89%);
+    font-size: 0.8rem;
+    width: 11rem;
+}
+
+/*h2 in Summary container*/
+.summary_header {
+    color: hsl(224, 30%, 27%);
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+/*Create containers for summary to add info from data.json*/
+.Reaction, .Memory, .Verbal, .Visual {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+/*Separate background colors*/
+.Reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.Memory {
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.Verbal {
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.Visual {
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+/*Adjusting elements in containers in summary*/
+.image {
+    margin-right: 0.5rem;
+}
+
+.category {
+    font-size: 0.9rem;
+    margin-right: 2rem;
+}
+
+.score {
+    font-weight: bold;
+}
+
+.total {
+    color: hsla(224, 30%, 27%, 0.5);
+}
+
+/*Separate colors*/
+.Reaction>h3 {
+    color: hsl(0, 100%, 67%);
+}
+
+.Memory>h3 {
+    color: hsl(39, 100%, 56%);
+}
+
+.Verbal>h3 {
+    color: hsl(166, 100%, 37%);
+}
+
+.Visual>h3 {
+    color: hsl(234, 85%, 45%);
+}
+
+/*Button*/
+button {
+    width: 100%;
+    background-color: hsl(224, 30%, 27%);
+    color: hsl(221, 100%, 96%);
+    padding: 0.7rem;
+    border-radius: 20px;
+    border: none;
+    margin-top: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+/*Footer*/
+.attribution { 
+    position: absolute;
+    font-size: 11px; 
+    text-align: center; 
+    bottom: 10px;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/*Change screen size*/
+@media screen and (max-width: 450px) {
+    body {
+        margin: 0 auto;
+        padding: 0;
+        display: block;        
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .result {
+        width: 100%;
+        position: static;
+        margin: 0;
+        padding: 1rem;
+        gap: 1rem;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .summary {
+        position: static;
+        width: 100%;
+    }
+
+    footer {
+        display: none;
+    }
+}
